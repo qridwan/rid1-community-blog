@@ -1,0 +1,20 @@
+{
+  "name": "ridxyz-blog",
+  "version": "1.0.0",
+  "description": "a real blog web created by rid1.xyz",
+  "main": "index.js",
+  "author": "ridwanul alam",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.3",
+    "mongoose": "^6.2.9",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
