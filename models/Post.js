@@ -12,7 +12,7 @@ const postSchema = Schema(
       maxLength: 150,
     },
     body: { type: String, required: true },
-    author: { type: Types.ObjectId, ref: User, required: true },
+    author: { type: Types.ObjectId, ref: 'User', required: true },
     tags: {
       type: [String],
       required: true,
@@ -22,19 +22,19 @@ const postSchema = Schema(
     likes: [
       {
         type: Types.ObjectId,
-        ref: User,
+        ref: 'User',
       },
     ],
     dislikes: [
       {
         type: Types.ObjectId,
-        ref: User,
+        ref: 'User',
       },
     ],
     comments: [
       {
         type: Types.ObjectId,
-        ref: Comment,
+        ref: 'Comment',
       },
     ],
   },

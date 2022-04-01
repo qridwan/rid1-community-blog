@@ -6,12 +6,12 @@ const commentSchema = new Schema(
   {
     post: {
       type: Types.ObjectId,
-      ref: Post,
+      ref: 'Post',
       required: true,
     },
     user: {
       type: Types.ObjectId,
-      ref: User,
+      ref: 'User',
       required: true,
     },
     body: {
@@ -26,7 +26,7 @@ const commentSchema = new Schema(
       },
       user: {
         type: Types.ObjectId,
-        ref: User,
+        ref: 'User',
         required: true,
       },
       createdAt: {
@@ -38,4 +38,6 @@ const commentSchema = new Schema(
   { timestamp: true }
 );
 
-const Comment = model("Comment", commentSchema, "Commnets");
+const Comment = model("Comment", commentSchema, "comments");
+
+module.exports = Comment;
