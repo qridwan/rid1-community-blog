@@ -1,11 +1,11 @@
 // -USER , title, bio, profilepic, links: {fb, link}, posts, bookmarks
-
 const { Schema, model, Types } = require("mongoose");
 const Post = require("./Post");
 const User = require("./User");
 const profileSchema = new Schema(
   {
-    user: { type: Types.ObjectId, ref: User, required: true },
+    user: { type: Types.ObjectId, ref: 'User', required: true },
+    name: { type: String, required: true, trim: true },
     title: { type: Types.String, trim: true, maxLength: 100 },
     bio: { type: Types.String, trim: true, maxLength: 500 },
     profilepic: { type: String },
@@ -18,12 +18,12 @@ const profileSchema = new Schema(
     posts: [
       {
         type: Types.ObjectId,
-        ref: Post,
+        ref: 'Post',
       },
     ],
     bookmarks: {
       type: Types.ObjectId,
-      ref: Post,
+      ref: 'Post',
     },
   },
   { timestamp: true }

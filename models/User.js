@@ -1,21 +1,20 @@
 //-name -email -pass -profile
 const { Schema, model, Types } = require("mongoose");
-export const DOCUMENT_NAME = "User";
-export const COLLECTION_NAME = "users";
-const Profile = require("./Profile");
+// const Profile = require("./Profile");
+
 const userSchema = new Schema(
   {
-    name: {
+    username: {
       type: "string",
       trim: true,
-      maxLength: 30,
+      maxLength: 15,
       require: true,
     },
     email: { type: "string", trim: true },
     password: { type: "string", require: true },
     profile: {
       type: Types.ObjectId,
-      ref: Profile,
+      ref: 'Profile',
     },
   },
   {
@@ -23,5 +22,5 @@ const userSchema = new Schema(
   }
 );
 
-const User = model(DOCUMENT_NAME, userSchema, COLLECTION_NAME);
+const User = model("User", userSchema, "users");
 module.exports = User;
